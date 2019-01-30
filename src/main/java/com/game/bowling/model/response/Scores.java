@@ -11,5 +11,5 @@ import java.util.List;
 @Getter
 public class Scores {
 
-    private final List<Integer> scores;
+    private final List<Integer> scoresPerFrame;
 }

@@ -23,7 +23,7 @@ public class BowlingGameScoreCalculator implements GameScoreCalculator {
             scores.add(cumulativeScore);
         }
         return Scores.builder()
-                .scores(scores)
+                .scoresPerFrame(scores)
                 .build();
     }
 
