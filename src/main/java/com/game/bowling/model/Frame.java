@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Representation of Bowling game frame
+ */
 @Getter
 @Setter
 @NoArgsConstructor
