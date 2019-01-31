@@ -24,7 +24,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "1- -- -- -- -- -- -- -- -- --"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(1, 1, 1, 1, 1, 1, 1, 1, 1, 1))));
@@ -37,7 +36,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "2- -- -- -- -- -- -- -- -- --"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(2, 2, 2, 2, 2, 2, 2, 2, 2, 2))));
@@ -50,7 +48,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "11 11 11 11 11 11 11 11 11 11"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(2, 4, 6, 8, 10, 12, 14, 16, 18, 20))));
@@ -63,7 +60,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "X -- -- -- -- -- -- -- -- --"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(10, 10, 10, 10, 10, 10, 10, 10, 10, 10))));
@@ -76,7 +72,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "3/ -- -- -- -- -- -- -- -- --"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(10, 10, 10, 10, 10, 10, 10, 10, 10, 10))));
@@ -89,7 +84,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "3/ 3- -- -- -- -- -- -- -- --"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(13, 16, 16, 16, 16, 16, 16, 16, 16, 16))));
@@ -102,7 +96,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "35 53 -- -- -- -- -- -- -- --"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(8, 16, 16, 16, 16, 16, 16, 16, 16, 16))));
@@ -115,7 +108,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "X 53 -- -- -- -- -- -- -- --"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(18, 26, 26, 26, 26, 26, 26, 26, 26, 26))));
@@ -128,7 +120,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "X X X X X X X X X XXX"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(30, 60, 90, 120, 150, 180, 210, 240, 270, 300))));
@@ -141,7 +132,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(15, 30, 45, 60, 75, 90, 105, 120, 135, 150))));
@@ -154,7 +144,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/3"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.scoresPerFrame", equalTo(Arrays.asList(19, 38, 57, 76, 95, 114, 133, 152, 171, 184))));
@@ -167,7 +156,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/3"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.url", endsWith("/bowling/scores/calculate")))
                 .andExpect(jsonPath("$.errorCode", equalTo("400")))
@@ -182,7 +170,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "9/ 9/"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.url", endsWith("/bowling/scores/calculate")))
                 .andExpect(jsonPath("$.errorCode", equalTo("400")))
@@ -197,7 +184,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/31"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.url", endsWith("/bowling/scores/calculate")))
                 .andExpect(jsonPath("$.errorCode", equalTo("400")))
@@ -212,7 +198,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "9/1 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/3"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.url", endsWith("/bowling/scores/calculate")))
                 .andExpect(jsonPath("$.errorCode", equalTo("400")))
@@ -227,7 +212,6 @@ public class BowlingGameControllerTest extends BowlingApplicationTests {
                 .contentType(APPLICATION_JSON_UTF8)
                 .param("frames", "/1 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/ 9/3"))
                 .andDo(print())
-                .andDo(mvcResult -> System.out.println(mvcResult.getResponse()))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.url", endsWith("/bowling/scores/calculate")))
                 .andExpect(jsonPath("$.errorCode", equalTo("400")))
