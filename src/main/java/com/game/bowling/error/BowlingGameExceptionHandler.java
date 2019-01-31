@@ -1,7 +1,6 @@
 package com.game.bowling.error;
 
 import com.game.bowling.error.exception.InvalidParameterException;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -18,7 +17,6 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
  */
 @ControllerAdvice
 @ResponseBody
-@Slf4j
 @RequestMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class BowlingGameExceptionHandler {
 
